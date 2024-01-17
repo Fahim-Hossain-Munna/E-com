@@ -31,11 +31,24 @@ import List from '../layouts/List.vue'
                     <List navigation="Sign Up"/>
                 </ul>
             </div>
-            <div class="w-[30%] flex justify-end items-center relative">
-                <input type="text" placeholder="What are you looking for?" class="bg-[#f5f5f5] w-[243px] pt-[7px] pb-[7px] pr-3 pl-5 placeholder:font-pop placeholder:text-xs">
+            <div class="w-[30%] flex justify-end items-center gap-6">
+                <div class="relative">
+                    <input type="text" placeholder="What are you looking for?" class="bg-[#f5f5f5] w-[243px] pt-[7px] pb-[7px] pr-3 pl-5 placeholder:font-pop placeholder:text-xs">
+                
                 <button>
                     <span class="material-symbols-outlined absolute top-[7px] right-[9px]">
                     search
+                    </span>
+                </button>
+            </div>
+                <button>
+                    <span class="material-symbols-outlined">
+                    favorite
+                    </span>
+                </button>
+                <button>
+                    <span class="material-symbols-outlined">
+                    shopping_cart
                     </span>
                 </button>
             </div>
