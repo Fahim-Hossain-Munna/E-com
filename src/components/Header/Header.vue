@@ -16,6 +16,21 @@
             </select>
         </div>
     </header>
-
+    <nav>
+        <div class="max-w-[1170px] mx-auto mt-[47px] mb-[23px] flex items-center">
+            <div class="w-[23.5%]">
+                <picture>
+                <img src="../../assets/uploads/logo/logo.png" alt="../../assets/uploads/logo/logo.png">
+                </picture>
+            </div>
+            <div class="w-[46.5%]">
+                <ul class="flex justify-start gap-12 font-pop text-base">
+                    <li class="relative after:transition-all after:duration-500 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:translate-x-[-50%] after:w-0 after:h-[2px] after:bg-black/50 hover:after:w-full" >
+                        <a href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </template>
 
