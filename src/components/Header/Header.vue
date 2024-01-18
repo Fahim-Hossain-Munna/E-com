@@ -1,5 +1,6 @@
 <script setup>
 import List from '../layouts/List.vue'
+import Icon from '../layouts/Icon.vue';
 </script>
 
 <template>
@@ -32,24 +33,18 @@ import List from '../layouts/List.vue'
                 </ul>
             </div>
             <div class="w-[30%] flex justify-end items-center gap-6">
-                <div class="relative">
+            <div class="relative">
                     <input type="text" placeholder="What are you looking for?" class="bg-[#f5f5f5] w-[243px] pt-[7px] pb-[7px] pr-3 pl-5 placeholder:font-pop placeholder:text-xs">
                 
                 <button>
-                    <span class="material-symbols-outlined absolute top-[7px] right-[9px]">
-                    search
-                    </span>
+                    <Icon iconName="search" class="absolute top-[7px] right-[9px]"/>
                 </button>
             </div>
-                <button>
-                    <span class="material-symbols-outlined">
-                    favorite
-                    </span>
+                <button class="flex justify-center items-center">
+                    <Icon iconName="favorite"/>
                 </button>
-                <button>
-                    <span class="material-symbols-outlined">
-                    shopping_cart
-                    </span>
+                <button class="flex justify-center items-center">
+                    <Icon iconName="shopping_cart"/>
                 </button>
             </div>
         </div>
