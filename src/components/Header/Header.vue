@@ -17,7 +17,7 @@ import Icon from '../layouts/Icon.vue';
             </select>
         </div>
     </header>
-    <nav>
+    <nav class="border-b">
         <div class="max-w-[1170px] mx-auto mt-[47px] mb-[23px] flex items-center">
             <div class="w-[23.5%]">
                 <picture>
