@@ -1,11 +1,13 @@
 <script setup>
 import List from '../layouts/List.vue'
 import Icon from '../layouts/Icon.vue';
+import Container from '../layouts/Container.vue';
 </script>
 
 <template>
     <header class="bg-black w-full py-4">
-        <div class="max-w-[1170px] mx-auto flex items-center justify-between">
+        <!-- <div class="max-w-[1170px] mx-auto flex items-center justify-between"> -->
+            <Container className="flex items-center justify-between">
             <p class="w-full text-center text-white font-pop text-sm">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
                 <a href="#" class="font-pop text-sm font-bold ml-1 underline">ShopNow</a>
             </p>
@@ -15,10 +17,12 @@ import Icon from '../layouts/Icon.vue';
                 <option value="English" class="bg-black">English</option>
                 <option value="English" class="bg-black">English</option>
             </select>
-        </div>
+        </Container>
+        <!-- </div> -->
     </header>
     <nav class="border-b">
-        <div class="max-w-[1170px] mx-auto mt-[47px] mb-[23px] flex items-center">
+        <!-- <div class="max-w-[1170px] mx-auto mt-[47px] mb-[23px] flex items-center"> -->
+            <Container className="mt-[47px] mb-[23px] flex items-center">
             <div class="w-[23.5%]">
                 <picture>
                 <img src="../../assets/uploads/logo/logo.png" alt="../../assets/uploads/logo/logo.png">
@@ -44,7 +48,8 @@ import Icon from '../layouts/Icon.vue';
                     <Icon iconName="shopping_cart"/>
                 </button>
             </div>
-        </div>
+        </Container>
+        <!-- </div> -->
     </nav>
 </template>
 

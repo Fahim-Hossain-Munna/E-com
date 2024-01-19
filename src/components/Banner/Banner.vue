@@ -2,13 +2,15 @@
 import Icon from '../layouts/Icon.vue';
 import CategoryList from '../layouts/CategoryList.vue';
 import Picture from '../layouts/Picture.vue';
+import Container from '../layouts/Container.vue';
 
 
 </script>
 
 <template>
     <div>
-        <div class="max-w-[1170px] mx-auto flex">
+        <!-- <div class="max-w-[1170px] mx-auto flex"> -->
+            <Container className="flex">
             <div class="w-[233px] border-r pt-10">
                 <ul>
                     <CategoryList CategoryTitle="Woman’s Fashion" position="relative pb-4 last:pb-0" classCode="absolute top-0 right-4"/>
@@ -27,7 +29,8 @@ import Picture from '../layouts/Picture.vue';
                     <Picture source="/src/assets/uploads/banner/banner.jpg" className="w-full h-full" alt="/src/assets/uploads/banner/banner.jpg" navigate="/home" />
                 </div>
             </div>
-        </div>
+        </Container>
+        <!-- </div> -->
     </div>
 </template>
 
