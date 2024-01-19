@@ -8,10 +8,10 @@ import Container from '../layouts/Container.vue';
     <header class="bg-black w-full py-4">
         <!-- <div class="max-w-[1170px] mx-auto flex items-center justify-between"> -->
             <Container className="flex items-center justify-between">
-            <p class="w-full text-center text-white font-pop text-sm">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
+            <p class="w-full text-start lg:text-center text-white font-pop text-xs px-2 lg:px-0 lg:text-sm">Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
                 <a href="#" class="font-pop text-sm font-bold ml-1 underline">ShopNow</a>
             </p>
-            <select class="font-pop text-sm outline-none bg-transparent text-white pr-[5px]">
+            <select class="font-pop text-sm outline-none bg-transparent text-white pr-[5px] mx-2 lg:mx-0">
                 <option value="English" class="bg-black">English</option>
                 <option value="English" class="bg-black">English</option>
                 <option value="English" class="bg-black">English</option>
