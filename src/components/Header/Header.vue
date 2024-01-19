@@ -22,21 +22,21 @@ import Container from '../layouts/Container.vue';
     </header>
     <nav class="border-b">
         <!-- <div class="max-w-[1170px] mx-auto mt-[47px] mb-[23px] flex items-center"> -->
-            <Container className="mt-[47px] mb-[23px] flex items-center">
-            <div class="w-[23.5%]">
+            <Container className="mt-[47px] mb-[23px] lg:flex lg:items-center">
+            <div class="w-full flex justify-center lg:block lg:w-[23.5%]">
                 <picture>
                 <img src="../../assets/uploads/logo/logo.png" alt="../../assets/uploads/logo/logo.png">
                 </picture>
             </div>
-            <div class="w-[46.5%]">
-                <ul class="flex justify-start gap-12 font-pop text-base">
+            <div class="w-full lg:w-[46.5%] pt-8 lg:py-0">
+                <ul class="flex lg:justify-start justify-center lg:gap-12 gap-5 font-pop text-sm lg:text-base">
                     <List navigation="Home"/>
                     <List navigation="Contact"/>
                     <List navigation="About"/>
                     <List navigation="Sign Up"/>
                 </ul>
             </div>
-            <div class="w-[30%] flex justify-end items-center gap-6">
+            <div class="w-full pt-8 lg:pt-0 lg:w-[30%] flex lg:justify-end justify-center items-center gap-4 lg:gap-6">
             <div class="relative">
                     <input type="text" placeholder="What are you looking for?" class="bg-[#f5f5f5] w-[243px] pt-[7px] pb-[7px] pr-3 pl-5 placeholder:font-pop placeholder:text-xs">
                     <Icon iconName="search" class="absolute top-[50%] translate-y-[-50%] right-[10px]"/>
