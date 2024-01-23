@@ -4,6 +4,8 @@ import CategoryList from '../layouts/CategoryList.vue';
 import Picture from '../layouts/Picture.vue';
 import Container from '../layouts/Container.vue';
 import { ref } from 'vue';
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 let showUl = ref(false);
 
@@ -48,7 +50,16 @@ let showUl = ref(false);
             </div>
             <div class="w-full lg:w-[937px] lg:pt-10 lg:pl-11 p-2">
                 <div class="h-auto lg:h-[344px]">
-                    <Picture source="/src/assets/uploads/banner/banner.jpg" className="object-contain" alt="/src/assets/uploads/banner/banner.jpg" navigate="/home" />
+                    <carousel :items-to-show="1">
+                        <slide v-for="slide in 10" :key="slide">
+                        <Picture source="/src/assets/uploads/banner/banner.jpg" className="object-contain" alt="/src/assets/uploads/banner/banner.jpg" navigate="/home" />
+                        </slide>
+
+                        <template #addons>
+                        <!-- <navigation /> -->
+                        <pagination />
+                        </template>
+                    </carousel>
                 </div>
             </div>
         </Container>
