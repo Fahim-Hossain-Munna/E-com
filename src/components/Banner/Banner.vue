@@ -6,6 +6,7 @@ import Container from '../layouts/Container.vue';
 import { ref } from 'vue';
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import './Banner.css'
 
 let showUl = ref(false);
 
