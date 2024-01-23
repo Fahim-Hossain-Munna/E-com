@@ -2,6 +2,9 @@
 import List from '../layouts/List.vue'
 import Icon from '../layouts/Icon.vue';
 import Container from '../layouts/Container.vue';
+import { ref } from 'vue';
+
+let handleManuBar = ref(false)
 </script>
 
 <template>
@@ -22,21 +25,30 @@ import Container from '../layouts/Container.vue';
     </header>
     <nav class="border-b">
         <!-- <div class="max-w-[1170px] mx-auto mt-[47px] mb-[23px] flex items-center"> -->
-            <Container className="mt-[47px] mb-[23px] lg:flex lg:items-center">
-            <div class="w-full flex justify-center lg:block lg:w-[23.5%]">
+            <Container className="mt-[47px] mb-[23px] flex flex-wrap lg:flex-nowrap justify-between lg:items-center px-2 lg:px-0">
+            <div class="w-1/2 flex justify-start lg:block">
                 <picture>
                 <img src="../../assets/uploads/logo/logo.png" alt="../../assets/uploads/logo/logo.png">
                 </picture>
             </div>
-            <div class="w-full lg:w-[46.5%] pt-8 lg:py-0">
-                <ul class="flex lg:justify-start justify-center lg:gap-12 gap-5 font-pop text-sm lg:text-base">
+            <div class=" lg:hidden block">
+                <Icon iconName="menu" @click="handleManuBar =! handleManuBar"></Icon>
+            </div>
+            <div class="w-full flex justify-end text-end lg:block lg:pt-0 pt-2 lg:py-0">
+                <ul v-if="handleManuBar" class="flex flex-col lg:flex-row lg:justify-center lg:gap-12 gap-5 font-pop text-sm lg:text-base">
+                    <List navigation="Home"/>
+                    <List navigation="Contact"/>
+                    <List navigation="About"/>
+                    <List navigation="Sign Up"/>
+                </ul>
+                <ul class="hidden lg:flex flex-col lg:flex-row lg:justify-center lg:gap-12 gap-5 font-pop text-sm lg:text-base">
                     <List navigation="Home"/>
                     <List navigation="Contact"/>
                     <List navigation="About"/>
                     <List navigation="Sign Up"/>
                 </ul>
             </div>
-            <div class="w-full pt-8 lg:pt-0 lg:w-[30%] flex lg:justify-end justify-center items-center gap-4 lg:gap-6">
+            <div class="w-full pt-8 lg:pt-0 flex lg:justify-end justify-between items-center lg:gap-6">
             <div class="relative">
                     <input type="text" placeholder="What are you looking for?" class="bg-[#f5f5f5] w-[243px] pt-[7px] pb-[7px] pr-3 pl-5 placeholder:font-pop placeholder:text-xs">
                     <Icon iconName="search" class="absolute top-[50%] translate-y-[-50%] right-[10px]"/>
