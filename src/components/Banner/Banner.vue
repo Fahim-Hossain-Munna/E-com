@@ -52,7 +52,7 @@ let showUl = ref(false);
             <div class="w-full lg:w-[937px] lg:pt-10 lg:pl-11 p-2">
                 <div class="h-auto lg:h-[344px]">
                     <carousel :items-to-show="1">
-                        <slide v-for="slide in 10" :key="slide">
+                        <slide v-for="slide in 5" :key="slide" :wrap-around="false">
                         <Picture source="/src/assets/uploads/banner/banner.jpg" className="object-contain" alt="/src/assets/uploads/banner/banner.jpg" navigate="/home" />
                         </slide>
 
