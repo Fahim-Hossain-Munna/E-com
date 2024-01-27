@@ -1,5 +1,10 @@
 <script setup>
 import Container from '../layouts/Container.vue';
+import VueCountdown from '@chenfengyuan/vue-countdown';
+
+let currentTime = new Date()
+let flashEnd = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate() + 4);
+let time = flashEnd - currentTime
 </script>
 
 <template>
@@ -13,33 +18,35 @@ import Container from '../layouts/Container.vue';
                 <div>
                     <h2 class="font-inner font-semibold text-4xl tracking-[1.44px]">Flash Sales</h2>
                 </div>
+                <vue-countdown :time="time" v-slot="{ days, hours, minutes, seconds }">
                 <div class="flex items-center gap-4 mt-6 lg:mt-0">
                     <div>
                         <p class="font-pop text-xs font-medium">Date</p>
-                        <h3 class="font-inner text-[32px] font-bold tracking-[1.28px]">03</h3>
+                        <h3 class="font-inner text-[32px] font-bold tracking-[1.28px]">{{ days }}</h3>
                     </div>
                     <div>
                         <span class="text-[#E07575] font-pop font-bold">:</span>
                     </div>
                     <div>
                         <p class="font-pop text-xs font-medium">Hours</p>
-                        <h3 class="font-inner text-[32px] font-bold tracking-[1.28px]">03</h3>
+                        <h3 class="font-inner text-[32px] font-bold tracking-[1.28px]">{{ hours }}</h3>
                     </div>
                     <div>
                         <span class="text-[#E07575] font-pop font-bold">:</span>
                     </div>
                     <div>
                         <p class="font-pop text-xs font-medium">Minutes</p>
-                        <h3 class="font-inner text-[32px] font-bold tracking-[1.28px]">03</h3>
+                        <h3 class="font-inner text-[32px] font-bold tracking-[1.28px]">{{ minutes }}</h3>
                     </div>
                     <div>
                         <span class="text-[#E07575] font-pop font-bold">:</span>
                     </div>
                     <div>
                         <p class="font-pop text-xs font-medium">Seconds</p>
-                        <h3 class="font-inner text-[32px] font-bold tracking-[1.28px]">03</h3>
+                        <h3 class="font-inner text-[32px] font-bold tracking-[1.28px]">{{ seconds }}</h3>
                     </div>
                 </div>
+                </vue-countdown>
             </div>
         </Container>
     </div>
