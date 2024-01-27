@@ -13,8 +13,32 @@ import Container from '../layouts/Container.vue';
                 <div>
                     <h2 class="font-inner font-semibold text-4xl tracking-[1.44px]">Flash Sales</h2>
                 </div>
-                <div>
-                    <h2>Flash Sales</h2>
+                <div class="flex items-center gap-4">
+                    <div>
+                        <p class="font-pop text-xs font-medium">Date</p>
+                        <h3 class="font-inner text-[32px] font-bold tracking-[1.28px]">03</h3>
+                    </div>
+                    <div>
+                        <span class="text-[#E07575] font-pop font-bold">:</span>
+                    </div>
+                    <div>
+                        <p class="font-pop text-xs font-medium">Hours</p>
+                        <h3 class="font-inner text-[32px] font-bold tracking-[1.28px]">03</h3>
+                    </div>
+                    <div>
+                        <span class="text-[#E07575] font-pop font-bold">:</span>
+                    </div>
+                    <div>
+                        <p class="font-pop text-xs font-medium">Minutes</p>
+                        <h3 class="font-inner text-[32px] font-bold tracking-[1.28px]">03</h3>
+                    </div>
+                    <div>
+                        <span class="text-[#E07575] font-pop font-bold">:</span>
+                    </div>
+                    <div>
+                        <p class="font-pop text-xs font-medium">Seconds</p>
+                        <h3 class="font-inner text-[32px] font-bold tracking-[1.28px]">03</h3>
+                    </div>
                 </div>
             </div>
         </Container>
