@@ -1,6 +1,7 @@
 <script setup>
 import Container from '../layouts/Container.vue';
 import VueCountdown from '@chenfengyuan/vue-countdown';
+import Product from '../layouts/Product.vue'
 
 let currentTime = new Date()
 let flashEnd = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate() + 4);
@@ -47,6 +48,12 @@ let time = flashEnd - currentTime
                     </div>
                 </div>
                 </vue-countdown>
+            </div>
+            <div class="block lg:flex gap-[30px] mt-10 mb-5">
+                <Product imgSrc="/src/assets/uploads/product/product1.png" title="HAVIT HV-G92 Gamepad"/>
+                <Product imgSrc="/src/assets/uploads/product/product2.png" title="AK-900 Wired Keyboard"/>
+                <Product imgSrc="/src/assets/uploads/product/product3.png" title="IPS LCD Gaming Monitor"/>
+                <Product imgSrc="/src/assets/uploads/product/product4.png" title="S-Series Comfort Chair "/>
             </div>
         </Container>
     </div>
