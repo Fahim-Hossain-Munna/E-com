@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         'pop': ['Poppins', 'sans-serif'],
+        'inner': ['Inter', 'sans-serif'],
 
       }
     },
