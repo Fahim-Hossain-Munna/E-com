@@ -2,6 +2,7 @@
 import Container from '../layouts/Container.vue';
 import VueCountdown from '@chenfengyuan/vue-countdown';
 import Product from '../layouts/Product.vue'
+import Button from '../layouts/Button.vue'
 
 let currentTime = new Date()
 let flashEnd = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate() + 4);
@@ -54,6 +55,9 @@ let time = flashEnd - currentTime
                 <Product imgSrc="/src/assets/uploads/product/product2.png" title="AK-900 Wired Keyboard"/>
                 <Product imgSrc="/src/assets/uploads/product/product3.png" title="IPS LCD Gaming Monitor"/>
                 <Product imgSrc="/src/assets/uploads/product/product4.png" title="S-Series Comfort Chair "/>
+            </div>
+            <div class="flex justify-center items-center py-[60px]">
+               <Button title="View All Products" />
             </div>
         </Container>
     </div>
