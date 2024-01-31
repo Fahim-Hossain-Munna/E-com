@@ -8,7 +8,7 @@ import Product from '../layouts/Product.vue';
 </script>
 
 <template >
-    <div class="my-20 px-2 lg:px-0">
+    <div class="lg:py-20 py-10 px-2 lg:px-0">
         <Container>
             <div class="mb-5">
                 <Section title="This Month"/>
