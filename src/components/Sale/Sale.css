@@ -1,0 +1,37 @@
+#fashsale{
+    position: relative !important;
+    background: transparent !important;
+    width: 100% !important;
+}
+#fashsale .carousel__next {
+    right: 0 ;
+    top: -19% ;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    font-size: 24px;
+    background: #f5f5f5;
+    border-radius: 50%;
+}
+#fashsale .carousel__prev {
+    left: 89.7%;
+    top: -19% ;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    font-size: 24px;
+    border-radius: 50%;
+    background: #f5f5f5;
+}
+
+
+@media screen and (max-width: 768px) { 
+    #fashsale .carousel__prev {
+        left: 20%;
+        top: 107% ;
+    }
+    #fashsale .carousel__next {
+        right: 20%;
+        top: 107% ;
+    }
+}

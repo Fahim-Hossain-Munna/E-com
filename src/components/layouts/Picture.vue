@@ -12,6 +12,7 @@ defineProps({
         <a :href=navigate>
             <img :src=source :alt=alt :class=className>
         </a>
+        <slot></slot>
     </picture>
 </template>
 
