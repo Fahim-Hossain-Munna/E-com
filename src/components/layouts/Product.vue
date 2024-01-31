@@ -12,7 +12,7 @@ defineProps({
     <div class="lg:w-[270px] w-full mb-8 lg:mb-0">
                     <div class="w-full h-[250px] flex justify-center items-center relative group bg-[#F5F5F5] rounded">
                         <Picture :source=imgSrc />
-                        <p class="bg-black font-pop text-base font-medium text-white absolute left-0 bottom-0 w-full py-2 opacity-0 
+                        <p class="bg-black font-pop text-center text-base font-medium text-white absolute left-0 bottom-0 w-full py-2 opacity-0 
                         group-hover:opacity-100 transition-all duration-500
                          z-50">Add To Cart</p>
                         <div class="px-3 py-1 bg-[#DB4444] text-white rounded absolute top-3 left-3">
