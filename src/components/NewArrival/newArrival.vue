@@ -7,7 +7,7 @@ import Picture from '../layouts/Picture.vue';
 </script>
 
 <template>
-    <div class="py-[140px] px-2 lg:px-0">
+    <div class="pt-[80px] lg:pt-[140px] px-2 lg:px-0">
         <Container>
             <Section title="Featured"/>
             <div class="mt-5">

@@ -7,6 +7,7 @@ import Header from './components/Header/Header.vue';
 import NewArrival from './components/NewArrival/newArrival.vue';
 import Offer from './components/Offer/Offer.vue';
 import FlashSale from './components/Sale/FlashSale.vue';
+import Services from './components/Service/Services.vue';
 </script>
 
 <template>
@@ -18,4 +19,5 @@ import FlashSale from './components/Sale/FlashSale.vue';
   <Offer/>
   <ExploreProduct/>
   <NewArrival/>
+  <Services/>
 </template>
