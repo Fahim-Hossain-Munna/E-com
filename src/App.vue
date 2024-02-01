@@ -4,6 +4,7 @@ import BsaleProduct from './components/BsaleProduct/BsaleProduct.vue';
 import Category from './components/Category/Category.vue';
 import ExploreProduct from './components/ExploreProduct/exploreProduct.vue';
 import Header from './components/Header/Header.vue';
+import NewArrival from './components/NewArrival/newArrival.vue';
 import Offer from './components/Offer/Offer.vue';
 import FlashSale from './components/Sale/FlashSale.vue';
 </script>
@@ -16,4 +17,5 @@ import FlashSale from './components/Sale/FlashSale.vue';
   <BsaleProduct/>
   <Offer/>
   <ExploreProduct/>
+  <NewArrival/>
 </template>
