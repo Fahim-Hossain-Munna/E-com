@@ -2,6 +2,7 @@
 import Banner from './components/Banner/Banner.vue';
 import BsaleProduct from './components/BsaleProduct/BsaleProduct.vue';
 import Category from './components/Category/Category.vue';
+import ExploreProduct from './components/ExploreProduct/exploreProduct.vue';
 import Header from './components/Header/Header.vue';
 import Offer from './components/Offer/Offer.vue';
 import FlashSale from './components/Sale/FlashSale.vue';
@@ -14,4 +15,5 @@ import FlashSale from './components/Sale/FlashSale.vue';
   <Category/>
   <BsaleProduct/>
   <Offer/>
+  <ExploreProduct/>
 </template>
