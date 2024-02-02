@@ -1,9 +1,13 @@
 <script setup>
-
+import Header from '../components/Header/Header.vue';
+import Footer from '../components/Footer/Footer.vue';
+import LoginPage from '../components/Login/LoginPage.vue';
 </script>
 
 
 <template>
-    <h1>hello</h1>
+    <Header/>
+    <LoginPage/>
+    <Footer/>
 </template>
 
