@@ -7,12 +7,12 @@ import Button from '../layouts/Button.vue';
 </script>
 
 <template>
-    <div class=" mt-[60px] mb-[140px] h-[781px] flex justify-between">
-        <div class="w-[805px] h-full">
+    <div class=" mt-[60px] mb-[140px] h-[781px] block lg:flex justify-between px-2 lg:px-0">
+        <div class="w-full lg:w-[805px] object-cover lg:h-full">
             <Picture source="/src/assets/uploads/log_res/login.png" className="w-full h-full" />
         </div>
         <Container>
-            <div class="w-[370px] flex flex-col h-full justify-center items-center">
+            <div class="w-full lg:w-[370px] mt-16 lg:mt-0 flex flex-col h-full justify-center items-center">
                 <div class="w-full mb-12">
                 <h2 class="font-pop font-medium text-4xl mb-6">Log in to Exclusive</h2>
                 <p class="font-pop text-base">Enter your details below</p>
