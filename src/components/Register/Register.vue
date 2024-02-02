@@ -1,0 +1,43 @@
+<script setup>
+import Container from '../layouts/Container.vue';
+import Picture from '../layouts/Picture.vue';
+import Button from '../layouts/Button.vue';
+
+
+</script>
+
+<template>
+    <div class=" mt-[60px] mb-[220px] lg:mb-[170px]  h-[781px] block lg:flex justify-between px-2 lg:px-0">
+        <div class="w-full lg:w-[805px] object-cover lg:h-full">
+            <Picture source="/src/assets/uploads/log_res/login.png" className="w-full h-full" />
+        </div>
+        <Container>
+            <div class="w-full lg:w-[370px] mt-16 lg:mt-0 flex flex-col h-full justify-center items-center">
+                <div class="w-full mb-12">
+                <h2 class="font-pop font-medium text-4xl mb-6">Create an account</h2>
+                <p class="font-pop text-base">Enter your details below</p>
+                </div>
+                <div class="w-full flex flex-col gap-10">
+                    <input type="name" placeholder="Name" class="w-full border-b pb-2 placeholder:font-pop placeholder:text-base">
+                    <input type="email" placeholder="Password" class="w-full border-b pb-2 placeholder:font-pop placeholder:text-base">
+                    <input type="password" placeholder="Password" class="w-full border-b pb-2 placeholder:font-pop placeholder:text-base">
+                </div>
+
+                    <div class="mt-10 lg:w-[370px]">
+                        <Button title="Create Account" className="w-full"/>
+                    </div>  
+                    <div class="mt-4 lg:w-[370px] relative">
+                        <Button title="Sign up with Google" className="w-full bg-transparent border" subClass="!text-black" />
+                        <Picture source="/src/assets/uploads/log_res/google.png" className="hidden lg:block absolute top-1/2 translate-y-[-50%] left-16" />
+                    </div>
+                    <div class="w-full flex justify-center gap-2 items-center mt-[34px] px-2 lg:px-0">
+                        <p class="font-pop text-[#000] text-base">Already have account?</p>
+                        <!-- <a class="font-pop text-[#000] text-base underline"></a> -->
+                        <router-link to="/login" class="font-pop text-[#000] text-base underline">Log in</router-link>
+                    </div>
+
+            </div>
+        </Container>
+    </div>
+</template>
+

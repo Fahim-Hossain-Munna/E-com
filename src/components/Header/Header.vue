@@ -36,16 +36,16 @@ let handleManuBar = ref(false)
             </div>
             <div class="w-full flex justify-end text-end lg:block lg:pt-0 pt-2 lg:py-0">
                 <ul v-if="handleManuBar" class="flex flex-col lg:flex-row lg:justify-center lg:gap-12 gap-5 font-pop text-sm lg:text-base">
-                    <List navigation="Home"/>
-                    <List navigation="Contact"/>
-                    <List navigation="About"/>
-                    <List navigation="Sign Up"/>
+                    <List navigation="Home" link="/" />
+                    <List navigation="Contact" link="" />
+                    <List navigation="About" link="" />
+                    <List navigation="Sign Up" link="/register" />
                 </ul>
                 <ul class="hidden lg:flex flex-col lg:flex-row lg:justify-center lg:gap-12 gap-5 font-pop text-sm lg:text-base">
-                    <List navigation="Home"/>
-                    <List navigation="Contact"/>
-                    <List navigation="About"/>
-                    <List navigation="Sign Up"/>
+                    <List navigation="Home" link="/" />
+                    <List navigation="Contact" link="" />
+                    <List navigation="About" link="" />
+                    <List navigation="Sign Up" link="/register" />
                 </ul>
             </div>
             <div class="w-full pt-8 lg:pt-0 flex lg:justify-end justify-between items-center lg:gap-6">
