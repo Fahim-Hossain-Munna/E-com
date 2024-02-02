@@ -8,7 +8,7 @@ import Button from '../layouts/Button.vue';
 <template>
     <div>
         <Container>
-            <nav class="flex mt-20" aria-label="Breadcrumb">
+            <nav class="flex mt-20 px-2 lg:px-0" aria-label="Breadcrumb">
             <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
                 <li class="inline-flex items-center">
                 <router-link to="/" class="font-pop inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white">
@@ -28,7 +28,7 @@ import Button from '../layouts/Button.vue';
                 </li>
             </ol>
             </nav>
-            <div class="py-[140px]">
+            <div class="py-20 lg:py-[140px] ">
                 <h2 class="text-center font-pop font-medium text-[110px] mb-10">404 Not Found</h2>
                 <p class="text-center font-pop text-base">Your visited page not found. You may go home page.</p>
                 <div class="flex justify-center items-center mt-20">
