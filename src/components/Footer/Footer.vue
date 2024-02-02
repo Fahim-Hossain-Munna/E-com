@@ -7,10 +7,10 @@ let thisMonth = now.getFullYear()
 
 </script>
 <template>
-    <div class="bg-black pt-[80px] pb-[60px]">
+    <div class="bg-black lg:pt-[80px] pt-10 pb-10 lg:pb-[60px]">
         <Container>
-          <div class="flex justify-between">
-            <div class="w-[270px]">
+          <div class="lg:flex block justify-between px-2 lg:px-0">
+            <div class="lg:w-[270px] w-full mb-5 lg:mb-0">
             <Picture source="/src/assets/uploads/logo/logo_footer.png" />
             <div class="mt-6 text-white">
                 <h2 class="font-pop text-xl font-medium mb-6">Subscribe</h2>
@@ -24,7 +24,7 @@ let thisMonth = now.getFullYear()
             </div>
             </div>
             <!-- end 1st part -->
-            <div class="w-[175px]">
+            <div class="lg:w-[175px] w-full mb-5 lg:mb-0">
                 <div class="mb-6">
                     <h2 class="font-pop font-medium text-xl text-white">Support</h2>
                 </div>
@@ -37,7 +37,7 @@ let thisMonth = now.getFullYear()
                 </div>
             </div>
             <!-- end 2nd part -->
-            <div class="w-[175px]">
+            <div class="lg:w-[175px] w-full mb-5 lg:mb-0">
                 <div class="mb-6">
                     <h2 class="font-pop font-medium text-xl text-white">Account</h2>
                 </div>
@@ -52,7 +52,7 @@ let thisMonth = now.getFullYear()
                 </div>
             </div>
             <!-- end 3rd part -->
-            <div class="w-[175px]">
+            <div class="lg:w-[175px] w-full mb-5 lg:mb-0">
                 <div class="mb-6">
                     <h2 class="font-pop font-medium text-xl text-white">Quick Link</h2>
                 </div>
@@ -67,23 +67,23 @@ let thisMonth = now.getFullYear()
                 </div>
             </div>
             <!-- end 4th part -->
-            <div class="w-[217px]">
-                <div class="mb-6">
+            <div class="lg:w-[217px] w-full">
+                <div class="mb-6 flex justify-center lg:block">
                     <h2 class="font-pop font-medium text-xl text-white">Download App</h2>
                 </div>
-                <div class="mb-2">
+                <div class="mb-2 flex justify-center lg:block">
                     <p class="font-pop text-xs font-medium text-[rgba(255,255,255,0.7)]">Save $3 with App New User Only</p>
                 </div>
-                <div class="flex justify-between">
+                <div class="flex lg:justify-between justify-evenly">
                     <div class="w-[80px] h-[84px]">
-                        <Picture source="/src/assets/uploads/footer/qrd.jpg" className="h-fullgit" />
+                        <Picture source="/src/assets/uploads/footer/qrd.jpg" className="h-full w-full" />
                     </div>
                     <div class="w-[110px] flex flex-col h-[84px] justify-between">
                         <Picture source="/src/assets/uploads/footer/footer1.png" />
                         <Picture source="/src/assets/uploads/footer/footer2.png" />
                     </div>
                 </div>
-                <div class="mt-6 text-white flex gap-6 text-2xl">
+                <div class="mt-6 text-white flex gap-6 text-2xl lg:justify-start justify-center">
                     <i class="fa-brands fa-facebook-f"></i>
                     <i class="fa-brands fa-twitter"></i>
                     <i class="fa-brands fa-instagram"></i>
@@ -94,9 +94,9 @@ let thisMonth = now.getFullYear()
         </Container>
     </div>
     <div class="bg-black">
-        <Container>
+        <Container className="px-2 lg:px-0">
             <div class="flex justify-center text-[rgba(255,255,255,0.3)] py-6">
-            <p class="font-pop text-base">Copyright Fahim Hossain Munna {{ thisMonth }}. All right reserved</p>
+            <p class="font-pop text-xs">Copyright Fahim Hossain Munna {{ thisMonth }}. All right reserved</p>
           </div>
         </Container>
     </div>

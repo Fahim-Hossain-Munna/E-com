@@ -33,7 +33,7 @@ import Picture from '../layouts/Picture.vue';
                             </div>
                         </div>
                         <div class="w-full h-[284px] flex justify-between">
-                            <div class="h-full w-[128px] lg:w-[270px] relative">
+                            <div class="h-full w-[128px] sm:w-[270px] lg:w-[270px] relative">
                                 <Picture source="/src/assets/uploads/newArrival/new3.png" className="w-full h-full rounded" />
                                 <div class="flex flex-col gap-4 absolute bottom-0 left-0 m-4 lg:m-8 max-w-[244px]">
                                     <h2 class="font-pop font-semibold text-base lg:text-2xl text-white">Speakers</h2>
@@ -41,7 +41,7 @@ import Picture from '../layouts/Picture.vue';
                                     <a class="font-pop text-xs lg:text-base font-medium underline text-white">Shop Now</a>
                                 </div>
                             </div>
-                            <div class="h-full w-[200px] lg:w-[270px] relative">
+                            <div class="h-full w-[200px] sm:w-[270px] lg:w-[270px] relative">
                                 <Picture source="/src/assets/uploads/newArrival/new4.png" className="w-full h-full rounded" />
                                 <div class="flex flex-col gap-4 absolute bottom-0 left-0 m-3 lg:m-8 max-w-[244px]">
                                     <h2 class="font-pop font-semibold text-base lg:text-2xl text-white">Perfume</h2>
