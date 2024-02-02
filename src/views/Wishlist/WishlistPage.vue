@@ -1,13 +1,13 @@
 <script setup>
-import Header from '../components/Header/Header.vue';
-import Footer from '../components/Footer/Footer.vue';
-import Register from '../components/Register/Register.vue';
+import Header from '../../components/Header/Header.vue';
+import Wishlist from '../../components/Wishlist/Wishlist.vue';
+import Footer from '../../components/Footer/Footer.vue';
 </script>
 
 
 <template>
     <Header/>
-    <Register/>
+    <Wishlist/>
     <Footer/>
 </template>
 
