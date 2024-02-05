@@ -4,8 +4,13 @@ import Login from '../views/Login.vue';
 import Registration from '../views/Registration.vue';
 import Wishlist from '../views/Wishlist/WishlistPage.vue';
 import NopageFound from '../views/NopageFound.vue';
+import Contact from '../views/Contactus.vue';
 
 const routes = [
+    {
+        path : "/:pathMatch(.*)*",
+        component : NopageFound,
+    },
     {
         path : "/",
         component : Home,
@@ -23,9 +28,10 @@ const routes = [
         component : Wishlist,
     },
     {
-        path : "/:pathMatch(.*)*",
-        component : NopageFound,
-    }
+        path : "/contact",
+        component : Contact,
+    },
+    
 ];
 
 const router = createRouter({
