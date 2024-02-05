@@ -9,10 +9,10 @@ import Breadcum from '../Breadcum/Breadcum.vue';
 <template>
     <div>
         <Container>
-           <div class="my-20">
+           <div class="my-10 lg:my-20 px-2 lg:px-0">
             <Breadcum pagename="Contact" navigation="/contact" />
            </div>
-           <div class="flex justify-between mb-[140px]">
+           <div class="block lg:flex justify-between mb-[140px]">
             <div class="w-[340px] h-[457px] py-10 px-9">
                 <div class="flex flex-col">
                     <div>
@@ -45,14 +45,14 @@ import Breadcum from '../Breadcum/Breadcum.vue';
             </div>
 
             <!-- contact from part -->
-            <div class="w-[800px] p-8">
-                <div class="flex justify-between mb-8">
-                    <input type="text" placeholder="Your Name *" class="rounded w-[235px] py-[13px] px-4 bg-[#f5f5f5] placeholder:font-pop placeholder:text-base">
-                    <input type="text" placeholder="Your Email *" class="rounded w-[235px] py-[13px] px-4 bg-[#f5f5f5] placeholder:font-pop placeholder:text-base">
-                    <input type="text" placeholder="Your Phone *" class="rounded w-[235px] py-[13px] px-4 bg-[#f5f5f5] placeholder:font-pop placeholder:text-base">
+            <div class="w-full lg:w-[800px] lg:p-8 p-4">
+                <div class="flex flex-col gap-4 lg:gap-0 lg:flex-row justify-between mb-8">
+                    <input type="text" placeholder="Your Name *" class="rounded w-full lg:w-[235px] py-[13px] px-4 bg-[#f5f5f5] placeholder:font-pop placeholder:text-base">
+                    <input type="text" placeholder="Your Email *" class="rounded w-full lg:w-[235px] py-[13px] px-4 bg-[#f5f5f5] placeholder:font-pop placeholder:text-base">
+                    <input type="text" placeholder="Your Phone *" class="rounded w-full lg:w-[235px] py-[13px] px-4 bg-[#f5f5f5] placeholder:font-pop placeholder:text-base">
                 </div>
                 <div class="mb-8">
-                    <textarea class="rounded w-[737px] bg-[#f5f5f5] py-[13px] px-4 placeholder:font-pop placeholder:text-base" rows="8" placeholder="Your Message *"></textarea>
+                    <textarea class="rounded w-full lg:w-[737px] bg-[#f5f5f5] py-[13px] px-4 placeholder:font-pop placeholder:text-base" rows="8" placeholder="Your Message *"></textarea>
                 </div>
                 <div class="flex justify-end">
                     <Button title="Send Massage" />
