@@ -5,6 +5,7 @@ import Registration from '../views/Registration.vue';
 import Wishlist from '../views/Wishlist/WishlistPage.vue';
 import NopageFound from '../views/NopageFound.vue';
 import Contact from '../views/Contactus.vue';
+import Details from '../views/Details.vue'
 
 const routes = [
     {
@@ -30,6 +31,10 @@ const routes = [
     {
         path : "/contact",
         component : Contact,
+    },
+    {
+        path : "/product/details",
+        component : Details,
     },
     
 ];
