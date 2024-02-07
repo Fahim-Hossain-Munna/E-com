@@ -18,9 +18,9 @@ import Button from '../layouts/Button.vue';
                 <p class="font-pop text-base">Enter your details below</p>
                 </div>
                 <div class="w-full flex flex-col gap-10">
-                    <input type="name" placeholder="Name" class="w-full border-b pb-2 placeholder:font-pop placeholder:text-base">
-                    <input type="email" placeholder="Password" class="w-full border-b pb-2 placeholder:font-pop placeholder:text-base">
-                    <input type="password" placeholder="Password" class="w-full border-b pb-2 placeholder:font-pop placeholder:text-base">
+                    <input type="name" placeholder="Name" class="w-full border-b pb-2 placeholder:font-pop placeholder:text-base outline-none">
+                    <input type="email" placeholder="Email" class="w-full border-b pb-2 placeholder:font-pop placeholder:text-base outline-none">
+                    <input type="password" placeholder="Password" class="w-full border-b pb-2 placeholder:font-pop placeholder:text-base outline-none">
                 </div>
 
                     <div class="mt-10 lg:w-[370px]">
