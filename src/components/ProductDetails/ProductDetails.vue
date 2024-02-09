@@ -7,6 +7,8 @@ import CartBtn from '../layouts/CartBtn.vue';
 import Section from '../layouts/Section.vue';
 import Product from '../layouts/Product.vue';
 import Picture from '../layouts/Picture.vue';
+import VueMagnifier from '@websitebeaver/vue-magnifier'
+import '@websitebeaver/vue-magnifier/styles.css'
 
 
 let products = ref([
@@ -58,7 +60,8 @@ function clickBtnImg(p){
                         </div>
                         <div class="lg:h-full h-[400px] w-full lg:w-[500px] ml-auto flex justify-center items-center">
                             <!-- <Picture :source=pro.src className="w-full h-full" /> -->
-                            <Picture :source=showImg className="w-full lg:w-[446px] h-[315px]"/>
+                            <!-- <Picture :source=showImg className="w-full lg:w-[446px] h-[315px]"/> -->
+                            <VueMagnifier :src=showImg width="500" class="w-full lg:w-[446px] h-[315px]" />
                         </div>
                     </div>
                     <!-- left -->
