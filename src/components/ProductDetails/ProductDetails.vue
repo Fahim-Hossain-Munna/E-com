@@ -1,12 +1,44 @@
 <script setup>
+import { ref } from 'vue';
 import Container from '../layouts/Container.vue';
 import Breadcum from '../Breadcum/Breadcum.vue';
 import Button from '../layouts/Button.vue';
 import CartBtn from '../layouts/CartBtn.vue';
 import Section from '../layouts/Section.vue';
 import Product from '../layouts/Product.vue';
+import Picture from '../layouts/Picture.vue';
 
 
+let products = ref([
+    {
+        id : 1,
+        src : "/src/assets/uploads/DetailsGallery/details1.png",
+    },
+    {
+        id : 2,
+        src : "/src/assets/uploads/DetailsGallery/details2.png",
+    },
+    {
+        id : 3,
+        src : "/src/assets/uploads/DetailsGallery/details3.png",
+    },
+    {
+        id : 4,
+        src : "/src/assets/uploads/DetailsGallery/details4.png",
+    },
+    // {
+    //     id : 5,
+    //     src : "/src/assets/uploads/DetailsGallery/details5.png",
+    // },
+])
+
+let showImg = ref([
+products.value[0].src
+])
+
+function clickBtnImg(p){
+    showImg.value = p.src;
+}
 
 </script>
 
@@ -17,7 +49,18 @@ import Product from '../layouts/Product.vue';
                 <Breadcum pagename="Details" navigation="/product/details" />
                 </div>
                 <div class="block lg:flex justify-between mb-[140px]">
-                    <div class="w-full lg:w-[700px] h-[500px] border mb-20 Lg:mb-0"></div>
+                    <div class="w-full lg:w-[700px] h-[450px] lg:h-[600px] mb-20 Lg:mb-0 block lg:flex justify-center items-center">
+                        <div class="lg:h-full h-[90px] w-full lg:w-[170px] ml-auto flex flex-row lg:flex-col gap-4">
+                            <button v-for="product in products" :key="product.id"  @click="clickBtnImg(product)" class="lg:w-[170px] lg:h-[150px] w-20 h-16 bg-[#f5f5f5] flex justify-center items-center">
+                                <img :src=product.src class="lg:w-[112px] lg:h-[97px] w-[50px] h-[50px]">
+                            </button>
+                          
+                        </div>
+                        <div class="lg:h-full h-[400px] w-full lg:w-[500px] ml-auto flex justify-center items-center">
+                            <!-- <Picture :source=pro.src className="w-full h-full" /> -->
+                            <Picture :source=showImg className="w-full lg:w-[446px] h-[315px]"/>
+                        </div>
+                    </div>
                     <!-- left -->
                     <div class="w-full lg:w-[400px]">
                         <h2 class="font-pop font-semibold text-2xl">Havic HV G-92 Gamepad</h2>
@@ -127,3 +170,31 @@ import Product from '../layouts/Product.vue';
         </Container>
     </div>
 </template>
+
+
+<style>
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+</style>

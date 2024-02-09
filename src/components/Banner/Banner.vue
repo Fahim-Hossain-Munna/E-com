@@ -53,7 +53,7 @@ let showUl = ref(false);
                 <div class="h-auto lg:h-[344px]">
                     <carousel :items-to-show="1">
                         <slide v-for="slide in 5" :key="slide" :wrap-around="false">
-                        <Picture source="/src/assets/uploads/banner/banner.jpg" className="object-contain" alt="/src/assets/uploads/banner/banner.jpg" navigate="/home" />
+                        <Picture source="/src/assets/uploads/banner/banner.jpg" className="object-contain" alt="/src/assets/uploads/banner/banner.jpg" navigate="/" />
                         </slide>
 
                         <template #addons>
