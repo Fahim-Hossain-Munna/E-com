@@ -59,8 +59,6 @@ function clickBtnImg(p){
                           
                         </div>
                         <div class="lg:h-full h-[400px] w-full lg:w-[500px] ml-auto flex justify-center items-center">
-                            <!-- <Picture :source=pro.src className="w-full h-full" /> -->
-                            <!-- <Picture :source=showImg className="w-full lg:w-[446px] h-[315px]"/> -->
                             <VueMagnifier :src=showImg width="500" class="w-full lg:w-[446px] h-[315px]" />
                         </div>
                     </div>
