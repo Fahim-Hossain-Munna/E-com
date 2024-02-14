@@ -26,23 +26,23 @@ let handleManuBar = ref(false)
     <nav class="border-b">
         <!-- <div class="max-w-[1170px] mx-auto mt-[47px] mb-[23px] flex items-center"> -->
             <Container className="mt-[47px] mb-[23px] flex flex-wrap lg:flex-nowrap justify-between lg:items-center px-2 lg:px-0">
-            <div class="w-1/2 flex justify-start lg:block">
+            <div class="w-1/2 flex justify-start items-center lg:block">
                 <picture>
                 <img src="../../assets/uploads/logo/logo.png" alt="../../assets/uploads/logo/logo.png">
                 </picture>
             </div>
-            <div class=" lg:hidden block">
+            <div class=" lg:hidden p-2 border-2 flex justify-center items-center">
                 <Icon iconName="menu" @click="handleManuBar =! handleManuBar"></Icon>
             </div>
             <div class="w-full flex justify-end text-end lg:block lg:pt-0 pt-2 lg:py-0">
-                <ul v-if="handleManuBar" class="flex flex-col lg:flex-row lg:justify-center lg:gap-12 gap-5 font-pop text-sm lg:text-base">
-                    <List navigation="Home" link="/" />
-                    <List navigation="Contact" link="/contact" />
-                    <List navigation="About" link="" />
-                    <List navigation="Sign Up" link="/register" />
+                <ul v-if="handleManuBar" class="bg-[rgba(0,0,0,0.8)] w-full flex flex-col lg:flex-row lg:justify-center lg:gap-12 font-pop text-sm lg:text-base">
+                    <List navigation="Home" link="/" class="after:h-0 hover:bg-red-500 transition-all duration-700 py-5 pr-3 hover:text-[#f5f5f5] text-[#f5f5f5]" />
+                    <List navigation="Contact" link="/contact" class="after:h-0 hover:bg-red-500 transition-all duration-700 py-5 pr-3 hover:text-[#f5f5f5] text-[#f5f5f5]" />
+                    <List navigation="About" link="" class="after:h-0 hover:bg-red-500 transition-all duration-700 py-5 pr-3 hover:text-[#f5f5f5] text-[#f5f5f5]" />
+                    <List navigation="Sign Up" link="/register" class="after:h-0 hover:bg-red-500 transition-all duration-700 py-5 pr-3 hover:text-[#f5f5f5] text-[#f5f5f5]" />
                 </ul>
                 <ul class="hidden lg:flex flex-col lg:flex-row lg:justify-center lg:gap-12 gap-5 font-pop text-sm lg:text-base">
-                    <List navigation="Home" link="/" />
+                    <List navigation="Home" link="/"/>
                     <List navigation="Contact" link="/contact" />
                     <List navigation="About" link="" />
                     <List navigation="Sign Up" link="/register" />
@@ -58,6 +58,16 @@ let handleManuBar = ref(false)
                 </button>
                 <button class="flex justify-center items-center">
                     <Icon iconName="shopping_cart"/>
+                </button>
+                <button class="flex justify-center items-center relative group">
+                    <Icon iconName="account_circle" class="group-hover:text-[#DB4444] transition-all duration-700" />
+                        <ul class="w-[224px] bg-[rgba(0,0,0,0.8)] text-[#fafafa] rounded text-start pt-4 pl-5 pr-3 absolute top-full right-0 translate-y-52 invisible opacity-0 transition-all duration-700 z-50 group-hover:visible group-hover:opacity-100 group-hover:translate-y-7">
+                        <li class="mb-3"><span class="mr-4"><i class="fa-regular fa-user"></i></span> Manage My Account</li>
+                        <li class="mb-3"><span class="mr-4"><i class="fa-solid fa-bag-shopping"></i></span> My Order</li>
+                        <li class="mb-3"><span class="mr-4"><i class="fa-solid fa-ban"></i></span> My Cancellations</li>
+                        <li class="mb-3"><span class="mr-4"><i class="fa-regular fa-star"></i></span> My Reviews </li>
+                        <li class="mb-3"><span class="mr-4"><i class="fa-solid fa-arrow-right-from-bracket"></i></span> Logout</li>
+                        </ul>
                 </button>
             </div>
         </Container>
