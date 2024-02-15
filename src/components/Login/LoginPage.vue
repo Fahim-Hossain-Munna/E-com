@@ -8,7 +8,7 @@ import Button from '../layouts/Button.vue';
 
 <template>
     <div class=" mt-[60px] mb-[140px] h-[781px] block lg:flex justify-between px-2 lg:px-0">
-        <div class="w-full lg:w-[805px] object-cover lg:h-full">
+        <div class="w-full lg:w-1/2 object-cover lg:h-full">
             <Picture source="/src/assets/uploads/log_res/login.png" className="w-full h-full" />
         </div>
         <Container>
