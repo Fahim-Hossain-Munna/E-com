@@ -43,13 +43,13 @@ import Container from '../layouts/Container.vue';
                             <h2 class="font-pop text-base">LCD Monitor</h2>
                         </td>
                         <td class="py-6 px-10">
-                            <p class="font-pop text-base">$650</p>
+                            <p class="font-pop text-base">$6500</p>
                         </td>
                         <td class="py-6 px-10">
                             <CartBtn/>
                         </td>
                         <td class="py-6 px-10">
-                            <p class="font-pop text-base">$650</p>
+                            <p class="font-pop text-base">$6500</p>
                         </td>
                     </tr>
                 </tbody>
