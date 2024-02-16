@@ -6,6 +6,7 @@ import Wishlist from '../views/Wishlist/WishlistPage.vue';
 import NopageFound from '../views/NopageFound.vue';
 import Contact from '../views/Contactus.vue';
 import Details from '../views/Details.vue'
+import Cart from '../views/Cart.vue'
 
 const routes = [
     {
@@ -35,6 +36,10 @@ const routes = [
     {
         path : "/product/details",
         component : Details,
+    },
+    {
+        path : "/product/cart",
+        component : Cart,
     },
     
 ];

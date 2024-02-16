@@ -77,10 +77,10 @@ let thisMonth = now.getFullYear()
                 </div>
                 <div class="flex lg:justify-between justify-evenly">
                     <div class="w-[80px] h-[84px]">
-                        <QRCodeVue3 class="h-full w-full"
+                        <!-- <QRCodeVue3 class="h-full w-full"
                             value="https://swiperjs.com/demos#vertical"
-                        />
-                        <!-- <Picture source="/src/assets/uploads/footer/qrd.jpg" className="h-full w-full" /> -->
+                        /> -->
+                        <Picture source="/src/assets/uploads/footer/qrd.jpg" className="h-full w-full" />
                     </div>
                     <div class="w-[110px] flex flex-col h-[84px] justify-between">
                         <Picture source="/src/assets/uploads/footer/footer1.png" />
