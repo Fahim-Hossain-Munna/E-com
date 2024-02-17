@@ -54,10 +54,14 @@ let handleManuBar = ref(false)
                     <Icon iconName="search" class="absolute top-[50%] translate-y-[-50%] right-[10px]"/>
             </div>
                 <button class="flex justify-center items-center">
-                    <Icon iconName="favorite"/>
+                    <router-link to="/wishlist">
+                        <Icon iconName="favorite"/>
+                    </router-link>
                 </button>
                 <button class="flex justify-center items-center">
-                    <Icon iconName="shopping_cart"/>
+                    <router-link to="/product/cart">
+                        <Icon iconName="shopping_cart"/>
+                    </router-link>
                 </button>
                 <button class="flex justify-center items-center relative group">
                     <Icon iconName="account_circle" class="group-hover:text-[#DB4444] transition-all duration-700" />
