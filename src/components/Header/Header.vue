@@ -43,9 +43,9 @@ let handleManuBar = ref(false)
                 </ul>
                 <ul class="hidden lg:flex flex-col lg:flex-row lg:justify-center lg:gap-12 gap-5 font-pop text-sm lg:text-base">
                     <List navigation="Home" link="/"/>
-                    <List navigation="Contact" link="/contact" />
+                    <List navigation="Contact" link="/contact"/>
                     <List navigation="About" link="" />
-                    <List navigation="Sign Up" link="/register" />
+                    <List navigation="Sign Up" link="/register"/>
                 </ul>
             </div>
             <div class="w-full pt-8 lg:pt-0 flex lg:justify-end justify-between items-center lg:gap-6">
