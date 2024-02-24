@@ -138,7 +138,7 @@ function clickBtnImg(p){
                                     <i class="fa-solid fa-truck"></i>
                                 </div>
                                 <div>
-                                    <p class="font-pop text-base font-medium">Free Delivery</p>
+                                    <p class="font-pop text-base font-medium">Free Delivery -- munna</p>
                                     <p class="font-pop text-xs font-medium">Enter your postal code for Delivery Availability</p>
                                 </div>
                             </div>
