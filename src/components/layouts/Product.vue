@@ -9,7 +9,7 @@ defineProps({
 </script>
 
 <template>
-    <div class="lg:w-[270px] w-full mb-8 lg:mb-0">
+    <router-link to="/product/details" class="lg:w-[270px] w-full mb-8 lg:mb-0">
                     <div class="w-full h-[250px] flex justify-center items-center relative group bg-[#F5F5F5] rounded">
                         <Picture :source=imgSrc />
                         <p class="bg-black font-pop text-center text-base font-medium text-white absolute left-0 bottom-0 w-full py-2 opacity-0 
@@ -48,5 +48,5 @@ defineProps({
                             </div>
                         </div>
                     </div>
-                </div>
+                </router-link>
 </template>
