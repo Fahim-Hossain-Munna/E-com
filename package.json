@@ -11,8 +11,6 @@
   "dependencies": {
     "@chenfengyuan/vue-countdown": "^2.1.2",
     "@websitebeaver/vue-magnifier": "^1.1.0",
-    "qrcode-reader-vue3": "^3.1.2",
-    "qrcode-vue3": "^1.6.8",
     "swiper": "^11.0.6",
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",
