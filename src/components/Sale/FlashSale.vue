@@ -1,5 +1,6 @@
 <script setup>
-import { ref,reactive } from 'vue';
+import { ref,reactive,onMounted } from 'vue';
+import axios from 'axios';
 import Container from '../layouts/Container.vue';
 import VueCountdown from '@chenfengyuan/vue-countdown';
 import Product from '../layouts/Product.vue'
@@ -9,10 +10,12 @@ import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import './Sale.css'
 
+
 let currentTime = new Date()
 let flashEnd = new Date(currentTime.getFullYear(), currentTime.getMonth(), currentTime.getDate() + 4);
 let time = flashEnd - currentTime
 
+const products = ref([])
 
 let sales = reactive([
     {
@@ -47,6 +50,11 @@ const breakpoints = {
     itemsToShow: 4,
   },
 }
+
+onMounted(async() => {
+    let response = await axios.get("https://dummyjson.com/products")
+    products.value = response.data.products
+})
 
 </script>
 
@@ -90,8 +98,8 @@ const breakpoints = {
             </div>
             <div class="block lg:flex justify-between items-center mt-10 mb-5">
             <carousel :items-to-show="4" id="fashsale" :breakpoints="breakpoints">
-                <slide v-for="(sale,index) in sales" :key="index">
-                    <Product :imgSrc=sale.source :title=sale.title />
+                <slide v-for="(sale,index) in products" :key="index">
+                    <Product :imgSrc=sale.thumbnail :title=sale.title :price=sale.price :discount=sale.discountPercentage :productId=sale.id  />
                 </slide>
 
                 <template #addons>

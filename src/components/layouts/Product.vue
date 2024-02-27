@@ -2,17 +2,21 @@
 import Picture from '../layouts/Picture.vue';
 import Icon from '../layouts/Icon.vue';
 
-defineProps({
-    imgSrc:String,
-    title:String,
-    price:String,
-    discount:String,
-})
+defineProps([
+    "imgSrc",
+    "title",
+    "price",
+    "discount",
+    "productId",
+    "navigate",
+])
+
+// console.log(productId);
 
 </script>
 
 <template>
-    <router-link to="/product/details" class="lg:w-[270px] w-full mb-8 lg:mb-0">
+    <router-link :to="'/product/details?search='+productId" class="lg:w-[270px] w-full mb-8 lg:mb-0">
                     <div class="w-full h-[250px] flex justify-center items-center relative group bg-[#F5F5F5] rounded">
                         <Picture :source=imgSrc className="h-[150px] w-[180px]" />
                         <p class="bg-black font-pop text-center text-base font-medium text-white absolute left-0 bottom-0 w-full py-2 opacity-0 

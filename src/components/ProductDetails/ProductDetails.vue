@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from 'vue';
+import axios from 'axios'
+import { onMounted, ref } from 'vue';
 import Container from '../layouts/Container.vue';
 import Breadcum from '../Breadcum/Breadcum.vue';
 import Button from '../layouts/Button.vue';
@@ -11,36 +12,30 @@ import VueMagnifier from '@websitebeaver/vue-magnifier'
 import '@websitebeaver/vue-magnifier/styles.css'
 
 
-let products = ref([
-    {
-        id : 1,
-        src : "/src/assets/uploads/DetailsGallery/details1.png",
-    },
-    {
-        id : 2,
-        src : "/src/assets/uploads/DetailsGallery/details2.png",
-    },
-    {
-        id : 3,
-        src : "/src/assets/uploads/DetailsGallery/details3.png",
-    },
-    {
-        id : 4,
-        src : "/src/assets/uploads/DetailsGallery/details4.png",
-    },
-    // {
-    //     id : 5,
-    //     src : "/src/assets/uploads/DetailsGallery/details5.png",
-    // },
+let productImages = ref([
+])
+let productDetails = ref([
+])
+let relatedProducts = ref([
 ])
 
-let showImg = ref([
-products.value[0].src
-])
+let showImg = ref([])
 
 function clickBtnImg(p){
-    showImg.value = p.src;
+    showImg.value = p
 }
+
+let urlPath=window.location.search.split('=')[1]
+
+onMounted(async()=>{
+    let response = await axios.get(`https://dummyjson.com/products/${urlPath}`)
+    productImages.value = response.data.images
+    showImg.value = response.data.thumbnail
+    productDetails.value = response.data
+    let relatedResponse = await axios.get(`https://dummyjson.com/products/category/${response.data.category}`)
+    relatedProducts.value = relatedResponse.data.products.slice(0,4)
+
+})
 
 </script>
 
@@ -53,8 +48,8 @@ function clickBtnImg(p){
                 <div class="block lg:flex justify-between mb-[140px]">
                     <div class="w-full lg:w-[700px] h-[450px] lg:h-[600px] mb-20 Lg:mb-0 block lg:flex justify-center items-center">
                         <div class="lg:h-full h-[90px] w-full lg:w-[170px] ml-auto flex flex-row lg:flex-col gap-4">
-                            <button v-for="product in products" :key="product.id"  @click="clickBtnImg(product)" class="lg:w-[170px] lg:h-[150px] w-20 h-16 bg-[#f5f5f5] flex justify-center items-center">
-                                <img :src=product.src class="lg:w-[112px] lg:h-[97px] w-[50px] h-[50px]">
+                            <button v-for="product in productImages" :key="product.id"  @click="clickBtnImg(product)" class="lg:w-[170px] lg:h-[150px] w-20 h-16 bg-[#f5f5f5] flex justify-center items-center">
+                                <img :src=product class="lg:w-[112px] lg:h-[97px] w-[50px] h-[50px]">
                             </button>
                           
                         </div>
@@ -64,7 +59,7 @@ function clickBtnImg(p){
                     </div>
                     <!-- left -->
                     <div class="w-full lg:w-[400px]">
-                        <h2 class="font-pop font-semibold text-2xl">Havic HV G-92 Gamepad</h2>
+                        <h2 class="font-pop font-semibold text-2xl">{{ productDetails.title }}</h2>
                         <div class="flex justify-start items-center gap-2 my-4 text-[#FFAD33]">
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -74,7 +69,7 @@ function clickBtnImg(p){
                             <p class="text-[rgba(0,0,0,0.5)] font-pop text-sm border-r pr-4">(150 Reviews)</p>
                             <p class="text-[#00FF66] font-pop text-sm pl-4">In Stock</p>
                         </div>
-                        <h3 class="mb-5 font-pop text-2xl">$192.00</h3>
+                        <h3 class="mb-5 font-pop text-2xl">${{ productDetails.price }}.00</h3>
                         <p class="font-pop text-sm mb-6">PlayStation 5 Controller Skin High quality vinyl with air channel 
                             adhesive for easy bubble free install & mess free removal Pressure 
                             sensitive.
@@ -160,11 +155,11 @@ function clickBtnImg(p){
                     <div class="mb-[60px]">
                         <Section title="Related Item"/>
                     </div>
-                    <div class="lg:flex block justify-between items-center">
-                        <Product imgSrc="/src/assets/uploads/product/product1.png" title="HAVIT HV-G92 Gamepad"/>
-                        <Product imgSrc="/src/assets/uploads/product/product2.png" title="AK-900 Wired Keyboard"/>
+                    <div class="lg:flex block lg:flex-wrap justify-between items-center">
+                        <Product v-for="product in relatedProducts" :key="product.id" :imgSrc=product.thumbnail :title=product.title :price=product.price :discount=product.discountPercentage />
+                        <!-- <Product imgSrc="/src/assets/uploads/product/product2.png" title="AK-900 Wired Keyboard"/>
                         <Product imgSrc="/src/assets/uploads/product/product3.png" title="IPS LCD Gaming Monitor"/>
-                        <Product imgSrc="/src/assets/uploads/product/product4.png" title="RGB liquid CPU Cooler"/>
+                        <Product imgSrc="/src/assets/uploads/product/product4.png" title="RGB liquid CPU Cooler"/> -->
                     </div>
                 </div>
 
