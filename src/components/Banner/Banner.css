@@ -1,30 +1,15 @@
-.carousel{
-    position: relative;
-    background: #000000;
-}
-.carousel__pagination{
-    column-gap: 25px;
-    box-sizing: border-box;
-}
-.carousel__pagination-item{
-    background: transparent;
-}
-.carousel__pagination-button{
-    width: 14px;
-    height: 14px;
-    background: hsla(0, 0%, 100%, 0.5);
-    border-radius: 50%;
+.swiper-pagination-bullet{
+    width: 14px !important;
+    height: 14px !important;
     border: 2px solid transparent;
-    position: absolute;
-    bottom: 12px;
+    border-radius: 50% !important;
+    margin: 0px 12px !important;
 }
-.carousel__pagination-button::after{
-    display: none;
-}
-.carousel__pagination-button--active{
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: red;
-    border: 2px solid #ffffff;
+
+.swiper-pagination-bullet-active{
+    width: 14px !important;
+    height: 14px !important; 
+    border-radius: 50% !important;
+    border: 2px solid #fff;
+    background: #DB4444 !important;
 }

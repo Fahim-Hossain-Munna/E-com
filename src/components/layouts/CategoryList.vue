@@ -1,6 +1,6 @@
 <template>
     <li :class=position class="font-pop text-base text-[#000]">
-        <a href="#">{{ CategoryTitle }}</a>
+        <router-link :to=nagigate+CategoryTitle >{{ CategoryTitle }}</router-link>
         <Icon iconName="navigate_next" :class=classCode />
     </li>
 </template>
@@ -11,5 +11,6 @@ defineProps({
     position : String,
     classCode : String,
     CategoryTitle : String,
+    nagigate : String,
 })
 </script>

@@ -1,14 +1,34 @@
 <script setup>
+import axios from 'axios'
 import Icon from '../layouts/Icon.vue';
 import CategoryList from '../layouts/CategoryList.vue';
 import Picture from '../layouts/Picture.vue';
 import Container from '../layouts/Container.vue';
-import { ref } from 'vue';
-import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import { onMounted, ref } from 'vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
 import './Banner.css'
+import 'swiper/css/pagination';
+
+import { Pagination } from 'swiper/modules';
+
+let modules = [Pagination]
 
 let showUl = ref(false);
+
+const products = ref([])
+const categories = ref([])
+const sliceValueforCategory = ref([])
+
+onMounted(async()=>{
+ let productresponse = await axios.get("https://dummyjson.com/products?limit=10")
+ let Categoryresponse = await axios.get("https://dummyjson.com/products/categories")
+ products.value = productresponse.data.products
+ categories.value = Categoryresponse.data
+
+ sliceValueforCategory.value = categories.value.slice(0,9)
+
+})
 
 </script>
 
@@ -18,15 +38,15 @@ let showUl = ref(false);
             <Container className="lg:flex">
             <div class="w-[233px] hidden lg:block border-r pt-10">
                 <ul>
-                    <CategoryList CategoryTitle="Woman’s Fashion" position="relative pb-4 last:pb-0" classCode="absolute top-0 right-4"/>
-                    <CategoryList CategoryTitle="Men’s Fashion" position="relative pb-4 last:pb-0" classCode="absolute top-0 right-4"/>
+                    <CategoryList v-for="category in sliceValueforCategory" :key="category" :CategoryTitle=category position="relative pb-4 last:pb-0" classCode="absolute top-0 right-4" nagigate="/products?search=" />
+                    <!-- <CategoryList CategoryTitle="Men’s Fashion" position="relative pb-4 last:pb-0" classCode="absolute top-0 right-4"/>
                     <CategoryList CategoryTitle="Electronics" position="relative pb-4 last:pb-0" classCode="absolute top-0 right-4 hidden"/>
                     <CategoryList CategoryTitle="Home & Lifestyle" position="relative pb-4 last:pb-0" classCode="absolute top-0 right-4 hidden"/>
                     <CategoryList CategoryTitle="Medicine" position="relative pb-4 last:pb-0" classCode="absolute top-0 right-4 hidden"/>
                     <CategoryList CategoryTitle="Sports & Outdoor" position="relative pb-4 last:pb-0" classCode="absolute top-0 right-4 hidden"/>
                     <CategoryList CategoryTitle="Baby’s & Toys" position="relative pb-4 last:pb-0" classCode="absolute top-0 right-4 hidden"/>
                     <CategoryList CategoryTitle="Groceries & Pets" position="relative pb-4 last:pb-0" classCode="absolute top-0 right-4 hidden"/>
-                    <CategoryList CategoryTitle="Health & Beauty" position="relative pb-4 last:pb-0" classCode="absolute top-0 right-4 hidden"/>
+                    <CategoryList CategoryTitle="Health & Beauty" position="relative pb-4 last:pb-0" classCode="absolute top-0 right-4 hidden"/> -->
                 </ul>
             </div>
             <div class="w-full pl-2 my-4 lg:mt-0 lg:hidden">
@@ -51,20 +71,16 @@ let showUl = ref(false);
             </div>
             <div class="w-full lg:w-[937px] lg:pt-10 lg:pl-11 p-2">
                 <div class="h-auto lg:h-[344px]">
-                    <carousel :items-to-show="1">
-                        <slide v-for="slide in 5" :key="slide" :wrap-around="false">
-                        <Picture source="/src/assets/uploads/banner/banner.jpg" className="object-contain" alt="/src/assets/uploads/banner/banner.jpg" navigate="/" />
-                        </slide>
-
-                        <template #addons>
-                        <!-- <navigation /> -->
-                        <pagination />
-                        </template>
-                    </carousel>
+                    <swiper :pagination="{clickable: true}" :modules="modules" class="mySwiper">
+                        <swiper-slide v-for="image in products" :key="image.id">
+                            <Picture :source=image.thumbnail className="object-contain" alt="/src/assets/uploads/banner/banner.jpg" navigate="/" />
+                        </swiper-slide>
+                    </swiper>
                 </div>
             </div>
         </Container>
         <!-- </div> -->
     </div>
 </template>
+
 

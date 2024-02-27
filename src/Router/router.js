@@ -8,6 +8,7 @@ import Contact from '../views/Contactus.vue';
 import Details from '../views/Details.vue'
 import Cart from '../views/Cart.vue'
 import About from '../views/About.vue'
+import Products from '../views/Products.vue'
 
 const routes = [
     {
@@ -33,6 +34,10 @@ const routes = [
     {
         path : "/contact",
         component : Contact,
+    },
+    {
+        path : "/products",
+        component : Products,
     },
     {
         path : "/product/details",

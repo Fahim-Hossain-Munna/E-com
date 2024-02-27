@@ -1,7 +1,25 @@
 <script setup>
 import Container from '../layouts/Container.vue';
+
 import Button from '../layouts/Button.vue';
 import Product from '../layouts/Product.vue';
+
+// import { onMounted, ref } from 'vue';
+// import axios from 'axios'
+// import router from '../../Router/router';
+
+
+// onMounted(async()=>{
+// if (window.location.search.split("=")[1]) {
+// let product = await axios.get(`https://dummyjson.com/products/category/${window.location.search.split("=")[1]}`)
+
+// console.log(product.data.products);
+// } else {
+//    router.push('/')
+// }
+
+
+// })
 
 </script>
 
