@@ -5,6 +5,15 @@ import CartBtn from '../layouts/CartBtn.vue';
 import Container from '../layouts/Container.vue';
 import productData from '../../store/product';
 
+const subTotal = productData.carts.map((item) => item.price * item.quantity)
+
+
+let data = subTotal.reduce((total, num) => {
+    return total + num;
+})
+
+
+
 </script>
 
 <template>
@@ -59,15 +68,15 @@ import productData from '../../store/product';
                     </div>
                     <div class="py-4 border-b flex justify-between items-center font-pop text-base">
                         <h2>Subtotal:</h2>
-                        <p>$1750</p>
+                        <p>${{ data }}</p>
                     </div>
                     <div class="py-4 flex border-b justify-between items-center font-pop text-base">
                         <h2>Shipping:</h2>
                         <p>Free</p>
                     </div>
-                    <div class="py-4 flex justify-between items-center">
+                    <div class="py-4 flex justify-between items-center font-pop text-base">
                         <h2>Total:</h2>
-                        <p>$1750</p>
+                        <p>${{ data }}</p>
                     </div>
                     <div class="mt-8 flex justify-center">
                         <Button title="Procees to checkout" />
