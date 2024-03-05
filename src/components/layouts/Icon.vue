@@ -1,11 +1,12 @@
 <template>
-    <span class="material-symbols-outlined" :class=class>
-    {{iconName}}
+    <span class="material-symbols-outlined" :class=className>
+        {{ iconName }}
     </span>
 </template>
+
 <script setup>
 defineProps({
     iconName: String,
-    class : String
+    className: String
 })
 </script>
