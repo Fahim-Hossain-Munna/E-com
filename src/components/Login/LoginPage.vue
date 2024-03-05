@@ -2,6 +2,20 @@
 import Container from '../layouts/Container.vue';
 import Picture from '../layouts/Picture.vue';
 import Button from '../layouts/Button.vue';
+import { ref, watch } from 'vue';
+import auth from '../../store/auth';
+
+const email = ref()
+const password = ref()
+
+function login(email, password) {
+    auth.login(email, password)
+    // console.log(auth.login());
+}
+
+
+
+
 
 
 </script>
@@ -14,16 +28,21 @@ import Button from '../layouts/Button.vue';
         <Container>
             <div class="w-full lg:w-[370px] mt-16 lg:mt-0 flex flex-col h-full justify-center items-center">
                 <div class="w-full mb-12">
-                <h2 class="font-pop font-medium text-4xl mb-6">Log in to Exclusive</h2>
-                <p class="font-pop text-base">Enter your details below</p>
+                    <h2 class="font-pop font-medium text-4xl mb-6">Log in to Exclusive</h2>
+                    <p class="font-pop text-base">Enter your details below - {{ auth.token }}</p>
                 </div>
                 <div class="w-full flex flex-col gap-10">
-                    <input type="email" placeholder="Email or Phone Number" class="w-full border-b pb-2 placeholder:font-pop placeholder:text-base outline-none">
-                    <input type="password" placeholder="Password" class="w-full border-b pb-2 placeholder:font-pop placeholder:text-base outline-none">
+                    <input type="email" v-model="email" placeholder="Email or Phone Number"
+                        class="w-full border-b pb-2 placeholder:font-pop placeholder:text-base outline-none">
+                    <input type="password" v-model="password" placeholder="Password"
+                        class="w-full border-b pb-2 placeholder:font-pop placeholder:text-base outline-none">
+                </div>
+                <div v-show="auth.error" class="mt-6">
+                    <p class="font-pop font-semibold text-2xl text-red-500">{{ auth.error }}</p>
                 </div>
                 <div class="w-full flex justify-between mt-10">
                     <div>
-                        <Button title="Log In"/>
+                        <Button title="Log In" @click="login(email, password)" />
                     </div>
                     <div class="flex justify-end items-center">
                         <p class="font-pop text-[#DB4444] text-base">Forget Password?</p>
@@ -33,4 +52,3 @@ import Button from '../layouts/Button.vue';
         </Container>
     </div>
 </template>
-
