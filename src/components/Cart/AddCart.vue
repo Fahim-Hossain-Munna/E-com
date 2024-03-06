@@ -8,6 +8,7 @@ import { reactive, ref } from 'vue';
 
 const cartNum = ref(1);
 let data = ref(0)
+let useCoupon = ref('')
 const subTotal = productData.carts.map((item) => item.price * item.quantity);
 data.value = subTotal.reduce((total, num) => total + num, 0);
 
@@ -44,6 +45,29 @@ function removeCart(cart) {
 
 function updateLocalStorage(cartItems) {
     localStorage.setItem('addCarts', JSON.stringify(cartItems));
+}
+
+let Coupons = ref([
+    {
+        code: "FHM123",
+        discount: 100
+    },
+    {
+        code: "FHMS123",
+        discount: 200
+    },
+    {
+        code: "EID123",
+        discount: 500
+    },
+])
+
+let discountedPrice = ref(0)
+
+function applyCoupon() {
+    Coupons.value.find((info) =>
+        info.code == useCoupon.value ? discountedPrice.value = info.discount : console.log("mile nai")
+    )
 }
 
 
@@ -112,9 +136,9 @@ function updateLocalStorage(cartItems) {
             </div>
             <div class="flex flex-col lg:flex-row justify-between mt-20">
                 <div>
-                    <input placeholder="Coupon Code" type="text"
+                    <input v-model="useCoupon" placeholder="Coupon Code" type="text"
                         class="py-4 px-6 w-full lg:w-[300px] mr-4 border mb-5 lg:mb-0">
-                    <Button title="Apply Coupon" />
+                    <Button title="Apply Coupon" @click="applyCoupon()" />
                 </div>
                 <div class="w-full lg:w-[470px] border py-8 px-6 mt-20 lg:mt-0">
                     <div class="mb-4 font-pop text-xl font-medium">
@@ -126,11 +150,11 @@ function updateLocalStorage(cartItems) {
                     </div>
                     <div class="py-4 flex border-b justify-between items-center font-pop text-base">
                         <h2>Shipping:</h2>
-                        <p>Free</p>
+                        <p>{{ discountedPrice }}</p>
                     </div>
                     <div class="py-4 flex justify-between items-center font-pop text-base">
                         <h2>Total:</h2>
-                        <p>${{ data }}</p>
+                        <p>${{ data - discountedPrice }}</p>
                     </div>
                     <div class="mt-8 flex justify-center">
                         <Button title="Procees to checkout" />
