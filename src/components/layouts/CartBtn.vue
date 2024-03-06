@@ -1,23 +1,21 @@
 <script setup>
 import { ref } from 'vue';
 const cartNum = ref(1);
+defineProps([
+    "className",
+    "quantity",
+])
 
 const decrementCart = () => {
     if (cartNum.value > 1) {
         cartNum.value--
     }
 }
-// const incrementCart = ()=>{
-//     cartNum+1
-// }
+
 function incrementCart() {
     cartNum.value++
 }
 
-defineProps({
-    className: String,
-
-})
 </script>
 
 <template>

@@ -4,13 +4,47 @@ import Button from '../layouts/Button.vue';
 import CartBtn from '../layouts/CartBtn.vue';
 import Container from '../layouts/Container.vue';
 import productData from '../../store/product';
+import { reactive, ref } from 'vue';
 
-const subTotal = productData.carts.map((item) => item.price * item.quantity)
+const cartNum = ref(1);
+let data = ref(0)
+const subTotal = productData.carts.map((item) => item.price * item.quantity);
+data.value = subTotal.reduce((total, num) => total + num, 0);
+
+const decrementCart = (cart) => {
+    productData.decrementCart(cart)
+    updateSubTotal();
+}
+
+function incrementCart(cart) {
+    productData.incrementCart(cart)
+    updateSubTotal();
+}
+
+function decresePrice() {
+    const subTota = productData.carts.map((item) => item.price * item.quantity);
+    data.value = subTota.reduce((total, num) => total + num, 0)
+}
+
+function updateSubTotal() {
+    const subTotal = productData.carts.map((item) => item.price * item.quantity);
+    data.value = subTotal.reduce((total, num) => total + num, 0);
+}
 
 
-let data = subTotal.reduce((total, num) => {
-    return total + num;
-})
+function removeCart(cart) {
+    const index = productData.carts.findIndex(item => item.id === cart.id);
+    if (index !== -1) {
+        productData.carts.splice(index, 1);
+        // Update local storage
+        updateLocalStorage(productData.carts);
+        decresePrice()
+    }
+}
+
+function updateLocalStorage(cartItems) {
+    localStorage.setItem('addCarts', JSON.stringify(cartItems));
+}
 
 
 
@@ -31,9 +65,13 @@ let data = subTotal.reduce((total, num) => {
                             <th class="text-start py-6 px-8 lg:px-10 font-pop text-base">Price</th>
                             <th class="text-start py-6 px-8 lg:px-10 font-pop text-base">Quantity</th>
                             <th class="text-start py-6 px-8 lg:px-10 font-pop text-base">Subtotal</th>
+                            <th class="text-start py-6 px-8 lg:px-10 font-pop text-base">Action</th>
                         </tr>
                     </thead>
                     <tbody>
+                        <tr v-if="productData.carts == ''">
+                            <td colspan="5" class="text-center bg-[#DB4444] text-white"> No Data Found</td>
+                        </tr>
                         <tr v-for="cart in productData.carts" :key="cart.id">
                             <td class="py-6 px-8 lg:px-10 flex justify-start items-center gap-5">
                                 <img :src="cart.thumbnail" class="w-[50px] h-10">
@@ -43,10 +81,26 @@ let data = subTotal.reduce((total, num) => {
                                 <p class="font-pop text-base">${{ cart.price }}</p>
                             </td>
                             <td class="py-6 px-8 lg:px-10">
-                                <CartBtn />
+                                <div class="incre flex justify-start items-center">
+                                    <button class="w-10 h-11 border" @click="decrementCart(cart)">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <div class="w-20 h-11 border flex justify-center items-center">
+                                        <p class="font-pop text-xl font-medium">{{ cart.quantity }}</p>
+                                    </div>
+                                    <button class="w-10 h-11 border" @click="incrementCart(cart)">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                                <!-- <CartBtn :quantity="cart.quantity" :info="cart.id" /> -->
                             </td>
                             <td class="py-6 px-8 lg:px-10">
                                 <p class="font-pop text-base">${{ cart.price * cart.quantity }}</p>
+                            </td>
+                            <td class="py-6 px-8 lg:px-10">
+                                <button @click="removeCart(cart)" class="font-pop text-base text-[#DB4444]">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
                             </td>
                         </tr>
                     </tbody>
