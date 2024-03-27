@@ -9,6 +9,7 @@ import Details from "../views/Details.vue";
 import Cart from "../views/Cart.vue";
 import About from "../views/About.vue";
 import Products from "../views/Products.vue";
+import Auth from "../store/auth";
 
 const routes = [
   {
