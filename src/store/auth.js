@@ -1,42 +1,63 @@
-import axios from "axios";
-import { effectScope, reactive } from "vue";
-import router from "../Router/router";
+import Axios from "axios";
+import { reactive, ref } from "vue";
 
-const auth = reactive({
-  isAuthinticate: false,
-  users: localStorage.getItem("auth")
-    ? JSON.parse(localStorage.getItem("auth"))
-    : [],
-  user: "",
+const Auth = reactive({
+  users: {},
+  authToken: localStorage.getItem("authToken")
+    ? JSON.parse(localStorage.getItem("authToken"))
+    : null,
+  isAuth: localStorage.getItem("isAuth")
+    ? JSON.parse(localStorage.getItem("isAuth"))
+    : false,
+  success: "",
   error: "",
-  async login(e, p) {
-    try {
-      const response = await axios.post(
-        "https://dummyjson.com/auth/login",
-        {
-          username: e,
-          password: p,
-        },
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
-      this.user = response.data.token;
-      this.users = response.data;
-      this.error = "";
-      localStorage.setItem("auth", JSON.stringify(this.users));
-      this.isAuthenticate = true;
-    } catch (error) {
-      this.error = "Invalid username or password";
+  baseURL: "http://127.0.0.1:8000/api/",
+  async register(name, email, password) {
+    let response = await Axios.post(this.baseURL + "customer/register", {
+      fname: name,
+      email: email,
+      password: password,
+    });
+    if (response.data.success) {
+      this.success = response.data.success;
+    } else {
+      this.error = response.data[0];
     }
   },
-
-  logout() {
-    this.users = "";
-    this.isAuthenticate = false;
-    localStorage.removeItem("auth");
-    router.push("/login");
+  // register off
+  async login(email, password) {
+    let response = await Axios.post(this.baseURL + "customer/login", {
+      email: email,
+      password: password,
+    });
+    if (response.data.success) {
+      this.success = response.data.success;
+      this.authToken = response.data.token;
+      this.isAuth = true;
+      localStorage.setItem("authToken", JSON.stringify(this.authToken));
+      localStorage.setItem("isAuth", JSON.stringify(this.isAuth));
+    } else {
+      this.error = response.data.Error;
+      console.log(this.error);
+    }
+    this.getUser();
+  },
+  async getUser() {
+    let response = await Axios.get(this.baseURL + "user", {
+      headers: {
+        Authorization: `Bearer ${this.authToken}`,
+      },
+    });
+    this.users = response.data;
+  },
+  async logout() {
+    this.users = {};
+    this.authToken = null;
+    this.isAuth = false;
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("isAuth");
   },
 });
 
-export default auth;
+Auth.getUser();
+export default Auth;
