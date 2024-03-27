@@ -4,8 +4,14 @@ import Icon from '../layouts/Icon.vue';
 import Container from '../layouts/Container.vue';
 import { ref } from 'vue';
 import productData from '../../store/product';
+import Auth from '../../store/Auth';
 
 let handleManuBar = ref(false)
+
+function logout() {
+    Auth.logout()
+}
+
 </script>
 
 <template>
@@ -54,7 +60,9 @@ let handleManuBar = ref(false)
                     <List navigation="Home" link="/" />
                     <List navigation="Contact" link="/contact" />
                     <List navigation="About" link="/about" />
-                    <List navigation="Sign Up" link="/register" />
+                    <!-- <List v-if="Auth.isAuth" navigation="Logout" @click="logout()" /> -->
+                    <List v-if="!Auth.isAuth" navigation="Sign Up" link="/register" />
+                    <!-- {{ Auth.users }} -->
                 </ul>
             </div>
             <div class="w-full pt-8 lg:pt-0 flex lg:justify-end justify-between items-center lg:gap-6">
@@ -81,13 +89,15 @@ let handleManuBar = ref(false)
                     <Icon iconName="account_circle" class="group-hover:text-[#DB4444] transition-all duration-700" />
                     <ul
                         class="w-[224px] bg-[rgba(0,0,0,0.8)] text-[#fafafa] rounded text-start pt-4 pl-5 pr-3 absolute top-full right-0 translate-y-52 invisible opacity-0 transition-all duration-700 z-50 group-hover:visible group-hover:opacity-100 group-hover:translate-y-7">
-                        <li class="mb-3"><span class="mr-4"><i class="fa-regular fa-user"></i></span> Manage My Account
+                        <li class="mb-3"><span class="mr-4"><i class="fa-regular fa-user"></i></span>
+                            My Account - {{ Auth.users.fname }}
                         </li>
                         <li class="mb-3"><span class="mr-4"><i class="fa-solid fa-bag-shopping"></i></span> My Order
                         </li>
                         <li class="mb-3"><span class="mr-4"><i class="fa-solid fa-ban"></i></span> My Cancellations</li>
                         <li class="mb-3"><span class="mr-4"><i class="fa-regular fa-star"></i></span> My Reviews </li>
-                        <li class="mb-3"><span class="mr-4"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                        <li @click="logout()" class="mb-3"><span class="mr-4"><i
+                                    class="fa-solid fa-arrow-right-from-bracket"></i></span>
                             Logout</li>
                     </ul>
                 </button>
