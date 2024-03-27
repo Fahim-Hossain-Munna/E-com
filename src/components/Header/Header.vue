@@ -92,16 +92,18 @@ function logout() {
                     <Icon iconName="account_circle" class="group-hover:text-[#DB4444] transition-all duration-700" />
                     <ul
                         class="w-[224px] bg-[rgba(0,0,0,0.8)] text-[#fafafa] rounded text-start pt-4 pl-5 pr-3 absolute top-full right-0 translate-y-52 invisible opacity-0 transition-all duration-700 z-50 group-hover:visible group-hover:opacity-100 group-hover:translate-y-7">
-                        <li class="mb-3"><span class="mr-4"><i class="fa-regular fa-user"></i></span>
-                            My Account - {{ Auth.users.fname }}
-
+                        <li v-if="Auth.users.length < 1" class="mb-3"><span class="mr-4"><i
+                                    class="fa-regular fa-user"></i></span>
+                            {{ Auth.users.fname }}
+                        </li>
+                        <li v-else class="mb-3"><span class="mr-4"><i class="fa-regular fa-user"></i></span>
+                            My Account
                         </li>
                         <li class="mb-3"><span class="mr-4"><i class="fa-solid fa-bag-shopping"></i></span> My Order
                         </li>
                         <li class="mb-3"><span class="mr-4"><i class="fa-solid fa-ban"></i></span> My Cancellations</li>
                         <li class="mb-3"><span class="mr-4"><i class="fa-regular fa-star"></i></span> My Reviews </li>
                         <li @click="logout()" class="mb-3"><span class="mr-4"><i
-
                                     class="fa-solid fa-arrow-right-from-bracket"></i></span>
                             Logout</li>
                     </ul>
