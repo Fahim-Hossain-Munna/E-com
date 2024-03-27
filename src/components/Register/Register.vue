@@ -1,10 +1,11 @@
 <script setup>
+
 import Container from '../layouts/Container.vue';
 import Picture from '../layouts/Picture.vue';
 import Button from '../layouts/Button.vue';
+
 import { ref } from 'vue';
 import Auth from '../../store/Auth'
-
 
 let name = ref('')
 let email = ref('')
@@ -35,11 +36,14 @@ function register() {
                     <input v-model="email" type="email" placeholder="Email"
                         class="w-full border-b pb-2 placeholder:font-pop placeholder:text-base outline-none">
                     <input v-model="password" type="password" placeholder="Password"
+
                         class="w-full border-b pb-2 placeholder:font-pop placeholder:text-base outline-none">
                 </div>
 
                 <div class="mt-10 lg:w-[370px]">
+
                     <Button title="Create Account" @click="register()" className="w-full" />
+
                 </div>
                 <div class="mt-4 lg:w-[370px] relative">
                     <Button title="Sign up with Google" className="w-full bg-transparent border"

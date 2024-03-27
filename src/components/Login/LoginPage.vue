@@ -2,8 +2,10 @@
 import Container from '../layouts/Container.vue';
 import Picture from '../layouts/Picture.vue';
 import Button from '../layouts/Button.vue';
+
 import { ref } from 'vue';
 import Auth from '../../store/Auth'
+
 
 let email = ref('')
 let password = ref('')
@@ -36,6 +38,7 @@ function login() {
                 <div class="w-full flex justify-between mt-10">
                     <div>
                         <Button title="Log In" @click="login" />
+
                     </div>
                     <div class="flex justify-end items-center">
                         <p class="font-pop text-[#DB4444] text-base">Forget Password?</p>
